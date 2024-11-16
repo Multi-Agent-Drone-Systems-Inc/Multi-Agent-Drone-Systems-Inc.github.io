@@ -1,3 +1,24 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    /* Matches the footer color */
+    height: 10vh;
+    /* 10% of the page height */
+    width: 100%;
+    /* Full width of the page */
+}
+
+header img {
+    max-height: 80%;
+    /* Ensures the logo fits within the header */
+    max-width: 100%;
+    /* Prevents overflow horizontally */
+    object-fit: contain;
+    /* Maintains aspect ratio */
+}
+
 footer {
     background-color: #333;
     color: #fff;
