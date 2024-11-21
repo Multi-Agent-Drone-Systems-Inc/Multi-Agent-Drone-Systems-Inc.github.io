@@ -1,44 +1,786 @@
-header {
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------------Header Section-------------------------------------- */
+
+/* Header Container */
+.header-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    /* Dark header background */
+    padding: 10px 20px;
+    height: 100px;
+    /* Set header height */
+    color: #fff;
+    /* White text for contrast */
+}
+
+/* Logo Styling */
+.logo {
+    flex: 1;
+    /* Occupies half of the header */
+    max-width: 50%;
+    /* Restrict the maximum width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.logo img {
+    max-height: 90%;
+    /* Restrict image height to 90% of the header */
+    width: auto;
+    object-fit: contain;
+    /* Ensures logo doesn't stretch */
+}
+
+/* Navigation Menu */
+nav {
+    flex: 1;
+    /* Occupies the remaining space */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    /* Adds space between navigation items */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    /* White text for links */
+    text-decoration: none;
+    /* Removes underline */
+    font-size: 1rem;
+    /* Adjust font size */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+    /* Highlight color on hover */
+    text-decoration: underline;
+    /* Underline for emphasis */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .logo {
+        max-width: 100%;
+        /* Allow the logo to take full width */
+        margin-bottom: 10px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        /* Allow navigation items to wrap */
+        gap: 15px;
+        /* Adjust gap for smaller screens */
+    }
+}
+
+/* ------------------------------------Home Section-------------------------------------- */
+
+/* Home Section (Hero) */
+.hero {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #333;
-    /* Matches the footer color */
-    height: 10vh;
-    /* 10% of the page height */
-    width: 100%;
-    /* Full width of the page */
+    height: 100vh;
+    /* Full viewport height */
+    text-align: center;
+    background: url('assets/MADS_Logo.jpg') no-repeat center center/contain;
+    /* Use the logo as the background, centered and scaled appropriately */
+    color: #fff;
+    /* White text for contrast */
 }
 
-header img {
-    max-height: 80%;
-    /* Ensures the logo fits within the header */
+.hero h1 {
+    font-size: 3rem;
+    /* Large, prominent heading */
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for readability */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for readability */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.hero .button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    /* Call-to-action color */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .button:hover {
+    background-color: #e65500;
+    /* Darker shade on hover */
+}
+
+/* -------------------------------About Section---------------------------------------- */
+
+#about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    /* Light background for contrast */
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.about-subheading {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-highlights ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.about-highlights ul li::before {
+    content: '✓';
+    color: #ff6600;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.about-image {
+    margin: 20px 0;
+}
+
+.about-image img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.about-cta:hover {
+    background-color: #e65500;
+    transform: scale(1.05);
+}
+
+/* -------------------------------Technology Section---------------------------------------- */
+
+.technology {
+    background-color: #f5f5f5;
+    /* Light gray background for contrast */
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+    /* Dark text for readability */
+}
+
+.technology h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+    /* Accent color for the heading */
+}
+
+.technology-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.technology-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    /* Align text to the left for better readability */
+}
+
+.technology-image img {
+    margin-top: 30px;
     max-width: 100%;
-    /* Prevents overflow horizontally */
-    object-fit: contain;
-    /* Maintains aspect ratio */
+    height: auto;
+    border-radius: 10px;
+    /* Rounded edges for a modern look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for emphasis */
 }
 
-footer {
+/* -------------------------------Application Section---------------------------------------- */
+
+.applications {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.applications h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.applications p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.application-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.application-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.application-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.application-item h3 {
+    font-size: 1.5rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.application-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.application-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* -------------------------------Products Section---------------------------------------- */
+
+/* Products Section */
+.products {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.products p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Search Bar Styling */
+#product-search {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px 15px;
+    margin: 20px auto 40px auto;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#product-search:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
+}
+
+/* Grid Layout for Products */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Product Items */
+.product-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item h3 {
+    font-size: 1.5rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Modal Styling */
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: scaleIn 0.3s ease;
+    position: relative;
+}
+
+.modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal h3 {
+    font-size: 2rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.modal p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+    color: #ff6600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* -------------------------------Testimonials Section---------------------------------------- */
+
+.testimonials {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #333;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+/* Testimonial Grid */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Testimonial Item */
+.testimonial-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.testimonial-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Quote Icon */
+.testimonial-item::before {
+    content: '“';
+    font-size: 3rem;
+    color: #ff6600;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    opacity: 0.2;
+}
+
+.testimonial-item p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-item cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #007acc;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* -------------------------------News Section---------------------------------------- */
+
+.news {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.news h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.news p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Search Bar Styling */
+#news-search {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px auto 40px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* News Grid Styling */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual News Item Styling */
+.news-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.news-item a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007acc;
+    font-weight: bold;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------------------FAQ Section---------------------------------------- */
+
+/* FAQ Section */
+.faq-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+#faq-search {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 50%;
+    max-width: 600px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007acc;
+    cursor: pointer;
+    margin: 0;
+}
+
+.faq-answer {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+    display: none;
+    /* Hide by default */
+}
+
+.faq-answer.active {
+    display: block;
+    /* Show when active */
+}
+
+/* -------------------------------Footer Section---------------------------------------- */
+
+/* Footer Grid Layout */
+.footer-grid {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 20px;
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+    width: 100%;
 }
 
-footer a {
+/* Row 1: Copyright */
+.footer-row.copyright {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Row 2: Navigation Links */
+.footer-row.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-row.navigation ul li a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
+.footer-row.navigation ul li a:hover {
     text-decoration: underline;
+    color: #ff6600;
 }
 
-footer .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Row 3: Contact Information */
+.footer-row.contact-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-row.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-row.contact-info a:hover {
+    text-decoration: underline;
+    color: #007acc;
 }
