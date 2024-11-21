@@ -5,6 +5,33 @@ fetch('header.html')
         document.querySelector('header').outerHTML = data;
     });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("droneVideo");
+
+    let playForward = true;
+
+    video.addEventListener("ended", () => {
+        video.pause();
+
+        // Toggle playback direction
+        playForward = !playForward;
+        if (!playForward) {
+            video.playbackRate = -1; // Play in reverse
+        } else {
+            video.playbackRate = 1; // Play forward
+        }
+
+        video.currentTime = playForward ? 0 : video.duration;
+        video.play();
+    });
+
+    // Ensure the video is ready for reverse playback
+    video.addEventListener("loadedmetadata", () => {
+        video.currentTime = 0; // Start at the beginning
+    });
+});
+
+
 // Load Footer
 fetch('footer.html')
     .then(response => response.text())
@@ -365,7 +392,6 @@ fetch('footer.html')
     .then(data => {
         document.querySelector('footer').outerHTML = data;
     });
-
 
 // Initialize All Features on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {

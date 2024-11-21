@@ -106,19 +106,20 @@ nav ul li a:hover {
 
 /* ------------------------------------Home Section-------------------------------------- */
 
-/* Home Section (Hero) */
+/* Hero Section with Video Background */
 .hero {
     position: relative;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     text-align: center;
     color: #fff;
     overflow: hidden;
 }
 
-.hero #drone-video {
+.background-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -126,26 +127,26 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    /* Send the video to the background */
 }
 
 .hero-content {
     z-index: 1;
-    /* Ensure the content is above the video */
-    background: rgba(0, 0, 0, 0.5);
-    /* Add a semi-transparent background for better text readability */
-    padding: 20px;
-    border-radius: 10px;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .hero .button {
