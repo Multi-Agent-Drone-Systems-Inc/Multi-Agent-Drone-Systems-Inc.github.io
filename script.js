@@ -363,6 +363,27 @@ document.addEventListener('DOMContentLoaded', () => {
     enableFAQSearch();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const careerItems = document.querySelectorAll(".career-item");
+
+    careerItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            const details = item.querySelector(".career-details");
+
+            // Toggle visibility of the clicked item
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                // Hide all other details first
+                document.querySelectorAll(".career-details").forEach((detail) => {
+                    detail.style.display = "none";
+                });
+                details.style.display = "block";
+            }
+        });
+    });
+});
+
 // Dynamically Update Copyright Year
 document.addEventListener("DOMContentLoaded", () => {
     const yearElement = document.querySelector("#current-year");
