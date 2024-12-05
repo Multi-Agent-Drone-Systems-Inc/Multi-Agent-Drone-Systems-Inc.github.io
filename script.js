@@ -153,7 +153,7 @@ function enableProductSearch() {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
-                }
+                } +
             });
         });
     }
@@ -161,13 +161,13 @@ function enableProductSearch() {
 
 // Testimonial Data
 const testimonials = [
-    { quote: "The Pigeon drone revolutionized our light delivery operations with unmatched reliability!", author: "Darcy Hunt" },
-    { quote: "The Eagle's long-range monitoring capabilities are a game-changer for environmental research.", author: "Ron Simpson, Technical Lead, McGill University" },
-    { quote: "The Crow drone has made short-range surveillance incredibly efficient and cost-effective.", author: "Joseph Vybihal" },
-    { quote: "The Hoopoe's reconnaissance capabilities have greatly improved our field data collection.", author: "David Meger" },
-    { quote: "The Owl's night vision capabilities set it apart for low-light operations.", author: "Gregory Dudek" },
-    { quote: "The Sparrow drone's inspection precision is unmatched in its class.", author: "Ambrish Raghoonundun" },
-    { quote: "The Falcon's speed is unparalleled for rapid response scenarios.", author: "Javad Sadri" }
+    { quote: "The Pigeon drone revolutionized our light delivery operations with unmatched reliability!", author: "Drone Company Owner" },
+    { quote: "The Eagle's long-range monitoring capabilities are a game-changer for environmental research.", author: "University Technical Lead" },
+    { quote: "The Crow drone has made short-range surveillance incredibly efficient and cost-effective.", author: "Software Systems Expert" },
+    { quote: "The Hoopoe's reconnaissance capabilities have greatly improved our field data collection.", author: "Artificial Intelligence Professor" },
+    { quote: "The Owl's night vision capabilities set it apart for low-light operations.", author: "Robotics Professor" },
+    { quote: "The Sparrow drone's inspection precision is unmatched in its class.", author: "Physics Expert" },
+    { quote: "The Falcon's speed is unparalleled for rapid response scenarios.", author: "Academic " }
 ];
 
 // Render Testimonials Dynamically
